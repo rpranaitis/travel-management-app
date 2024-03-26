@@ -1,0 +1,13 @@
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import styles from './Input.module.scss';
+
+const Input = ({ className, ...props }) => {
+  return <input className={classNames(styles.input, className)} {...props} />;
+};
+
+Input.propTypes = {
+  className: PropTypes.string,
+};
+
+export default Input;

@@ -1,0 +1,31 @@
+.navHeader {
+  width: 100%;
+  background: #37a0f3;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.nav a.active {
+  text-decoration: underline;
+}
+
+.logoutButton {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: white;
+  cursor: pointer;
+}
