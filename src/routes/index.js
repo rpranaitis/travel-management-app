@@ -34,3 +34,14 @@ export const routes = [
     Layout: AuthLayout,
   },
 ];
+
+export const navigationBarRoutes = [
+  {
+    name: 'Orders',
+    path: ROUTES.ORDERS,
+  },
+  {
+    name: 'Hotels',
+    path: ROUTES.HOTELS,
+  },
+];

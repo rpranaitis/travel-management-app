@@ -1,26 +1,19 @@
 import { Link, useLocation } from 'react-router-dom';
-import { ROUTES } from '../../routes';
+import { ROUTES, navigationBarRoutes } from '../../routes';
+import { LuLogOut } from 'react-icons/lu';
+import Logo from '../../assets/logo.png';
 import styles from './NavigationBar.module.scss';
-import classNames from 'classnames';
 
 const NavigationBar = () => {
   const location = useLocation();
 
-  const preparedRoutes = [
-    {
-      path: ROUTES.ORDERS,
-      name: 'Orders',
-    },
-    {
-      path: ROUTES.HOTELS,
-      name: 'Hotels',
-    },
-  ];
-
   return (
-    <header className={styles.navHeader}>
+    <header className={styles.header}>
+      <div className={styles.logoWrapper}>
+        <img src={Logo} alt="Logo" />
+      </div>
       <nav className={styles.nav}>
-        {preparedRoutes.map((route) => (
+        {navigationBarRoutes.map((route) => (
           <Link
             key={route.path}
             to={route.path}
@@ -30,13 +23,11 @@ const NavigationBar = () => {
           </Link>
         ))}
       </nav>
-      <i
-        className={classNames(
-          'fa-solid',
-          'fa-right-from-bracket',
-          styles.logoutButton
-        )}
-      ></i>
+      <div className={styles.logoutWrapper}>
+        <Link to={ROUTES.LOGIN}>
+          <LuLogOut />
+        </Link>
+      </div>
     </header>
   );
 };
