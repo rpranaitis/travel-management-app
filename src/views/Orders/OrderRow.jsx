@@ -1,9 +1,13 @@
 import styles from './OrderRow.module.scss';
 import PropTypes from 'prop-types';
-import { FaEuroSign } from 'react-icons/fa';
+import { Link, generatePath } from 'react-router-dom';
+import { MdEuroSymbol } from 'react-icons/md';
+import { ROUTES } from '../../routes';
 import Button from '../../components/Button/Button';
 
 const OrderRow = ({ order }) => {
+  const orderPath = generatePath(ROUTES.ORDER, { id: order.id });
+
   return (
     <div key={order.id} className={styles.order}>
       <div className={styles.leftSide}>
@@ -20,7 +24,7 @@ const OrderRow = ({ order }) => {
               <span>Price</span>
               <span className={styles.item}>
                 {order.price}
-                <FaEuroSign />
+                <MdEuroSymbol />
               </span>
             </div>
             <div className={styles.otherDetailsBlock}>
@@ -39,7 +43,9 @@ const OrderRow = ({ order }) => {
         </div>
       </div>
       <div className={styles.rightSide}>
-        <Button>View</Button>
+        <Link to={orderPath}>
+          <Button>View</Button>
+        </Link>
       </div>
     </div>
   );

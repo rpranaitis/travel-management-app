@@ -4,11 +4,14 @@ import { fakeOrders } from './consts';
 
 const Orders = () => {
   return (
-    <div className={styles.container}>
-      {fakeOrders.map((order) => (
-        <OrderRow order={order} key={order.id} />
-      ))}
-    </div>
+    <>
+      <h2 className={styles.title}>Orders</h2>
+      <div className={styles.container}>
+        {fakeOrders.map((order) => (
+          <OrderRow order={order} key={order.id} />
+        ))}
+      </div>
+    </>
   );
 };
 
