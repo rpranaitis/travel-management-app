@@ -3,12 +3,16 @@ import Input from '../../components/Input/Input';
 import styles from './Login.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../routes';
+import { useState } from 'react';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(email, password);
     navigate(ROUTES.ORDERS);
   };
 
@@ -19,8 +23,20 @@ const Login = () => {
         <div className={styles.rightSide}>
           <h3 className={styles.loginTitle}>LOGIN</h3>
           <form onSubmit={handleSubmit}>
-            <Input type="email" placeholder="Email" required />
-            <Input type="password" placeholder="Password" required />
+            <Input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Email"
+              required
+            />
+            <Input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Password"
+              required
+            />
             <Button type="submit">SIGN IN</Button>
           </form>
           <a href="#" className={styles.forgotPasswordText}>
