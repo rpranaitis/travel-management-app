@@ -32,7 +32,7 @@ const fakeOrder2 = {
   id: 3,
   hotel: {
     id: 3,
-    title: 'Trump tower',
+    title: 'Trump Tower',
     address: '725 Fifth Avenue, New York, NY 10022, United States',
     imageUrl:
       'https://s.abcnews.com/images/US/trump-tower-ap-file-ml-240129_1706547153628_hpMain_16x9_1600.jpg',
