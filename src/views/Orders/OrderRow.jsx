@@ -7,7 +7,6 @@ const OrderRow = ({ order }) => {
   return (
     <div key={order.id} className={styles.order}>
       <div className={styles.leftSide}>
-        <div>{order.id}</div>
         <div className={styles.imageContainer}>
           <img src={order.hotel.imageUrl} alt={order.hotel.title} />
         </div>
